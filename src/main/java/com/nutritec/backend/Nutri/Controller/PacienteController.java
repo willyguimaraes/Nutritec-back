@@ -71,13 +71,13 @@ public class PacienteController {
         if (!p.isPresent()) {
             return new ResponseEntity<CustomError>(new CustomError("ERRO! Paciente não encontrado"), HttpStatus.CONFLICT);
         }
-        
+
         repository.deleteById(id);
         return new ResponseEntity<Paciente>(p.get(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-	public ResponseEntity<?> findById(@PathVariable long id){
+	public ResponseEntity<?> consultarPaciente(@PathVariable long id){
 
         Optional<Paciente> p = repository.findById(id);
 
@@ -90,7 +90,7 @@ public class PacienteController {
 
     
     @GetMapping
-    public ResponseEntity<?> consultarPaciente(){
+    public ResponseEntity<?> consultarPacientes(){
         List<Paciente> pessoas = repository.findAll();
         return new ResponseEntity<List<Paciente>>(pessoas, HttpStatus.OK);
     }
