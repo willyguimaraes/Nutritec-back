@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class NutricionistaController {
     
-    NutricionistaService service;
+    //NutricionistaService service;
     NutricionistaRepository repository;
 
     @PostMapping
@@ -39,7 +39,7 @@ public class NutricionistaController {
         return new ResponseEntity<Nutricionista>(nutricionista, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/{id}")
+    /*@PutMapping(value = "/{id}")
 	public ResponseEntity<?> AtualizarNutri(@RequestBody Nutricionista nutricionista) {
 
         List<Nutricionista> pessoas = repository.findByMatricula(nutricionista.getMatricula());
@@ -48,6 +48,6 @@ public class NutricionistaController {
             return new ResponseEntity<CustomError>(new CustomError("ERRO! Nutricionista não cadastrado"), HttpStatus.CONFLICT);
         }
 
-    } 
+    } */
 
 }
