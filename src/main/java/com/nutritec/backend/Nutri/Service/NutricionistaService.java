@@ -21,6 +21,7 @@ public class NutricionistaService {
        n.setEspecialidade(nutri.getEspecialidade());
        n.setIdade(nutri.getIdade());
        n.setNome(nutri.getNome());
+       n.setPlanosAceitos(nutri.getPlanosAceitos());
        repository.save(n);
        return n;
     }

@@ -26,5 +26,7 @@ public class Nutricionista {
     private int idade;
 
     @Column(length = 200, nullable = false)
-    private String especialidade;  
+    private String especialidade; 
+
+    private String planosAceitos;
 }

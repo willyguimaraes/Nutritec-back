@@ -38,7 +38,10 @@ public class PacienteController {
             return new ResponseEntity<CustomError>(new CustomError("ERRO! cpf nulo ou invalido"), HttpStatus.CONFLICT);
         }else if(controle == 2){
             return new ResponseEntity<CustomError>(new CustomError("ERRO! Os dados não podem ser vazios ou nulos"), HttpStatus.CONFLICT);
+        }else if(controle == 3){
+            return new ResponseEntity<CustomError>(new CustomError("ERRO! Plano de saúde invalido ou não aceito"), HttpStatus.CONFLICT);
         }
+
 
        List<Paciente> pessoas = repository.findByCpf(paciente.getCpf());
 
