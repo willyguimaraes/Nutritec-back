@@ -1,5 +1,8 @@
 package com.nutritec.backend.Nutri.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.nutritec.backend.Nutri.Model.Nutricionista;
 import com.nutritec.backend.Nutri.Repository.NutricionistaRepository;
 
@@ -48,8 +51,15 @@ public class NutricionistaService {
         return true;
     }
 
+    public List<Nutricionista> getNutris(){
+       return repository.findAll();
+        
 
+    }
 
+    public Optional<Nutricionista> opNutri(Long id){
+        return repository.findById(id);
+    }
 
 
     

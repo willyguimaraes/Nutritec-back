@@ -16,9 +16,10 @@ public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Paciente paciente;
-    private Nutricionista nutri;
-    private Date dataConsulta;
-    private String Plano;
+
+    private Long pacienteId;
+    private Long nutriId;
+    private String dataConsulta;
+    private String plano;
 
 }

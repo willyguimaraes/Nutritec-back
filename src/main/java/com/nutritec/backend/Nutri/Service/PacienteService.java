@@ -2,6 +2,7 @@ package com.nutritec.backend.Nutri.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.nutritec.backend.Nutri.Model.Paciente;
 import com.nutritec.backend.Nutri.Repository.PacienteRepository;
@@ -38,7 +39,7 @@ public class PacienteService {
             return 1;
         } else if ( nome || numericos) {
             return 2;
-        } else if ( plano) {
+        } else if (!plano) {
             return 3;
         }
         return 0;
@@ -58,11 +59,16 @@ public class PacienteService {
         planos.add("PLANO_VIDA");
         planos.add("HAP_SAUDE");
         planos.add("UT_MAIS");
+        planos.add("");
 
         if (planos.contains(plano)){
             return true;
         }
         return false;
+    }
+
+    public Optional<Paciente> opPac(Long id) {
+        return repository.findById(id);
     }
   
 }
